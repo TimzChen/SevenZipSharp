@@ -532,7 +532,7 @@ namespace SevenZip
         /// </summary>
         /// <param name="commonRootLength">The length of the common root of the file names.</param>
         /// <param name="files">Array of file names</param>
-        private static void CheckCommonRoot(IReadOnlyList<string> files, ref int commonRootLength)
+        private static void CheckCommonRoot(IList<string> files, ref int commonRootLength)
         {
             string commonRoot;
 
@@ -594,7 +594,7 @@ namespace SevenZip
         /// <param name="directoryStructure">Preserve directory structure.</param>
         /// <returns>Special FileInfo array for the archive file table.</returns>
         private static FileInfo[] ProduceFileInfoArray(
-            IReadOnlyList<string> files, int commonRootLength,
+            IList<string> files, int commonRootLength,
             bool directoryCompress, bool directoryStructure)
         {
             var fis = new List<FileInfo>(files.Count);
